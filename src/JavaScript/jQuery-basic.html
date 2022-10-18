@@ -1,10 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>jQuery 기초</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+            integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+            crossorigin="anonymous"></script>
+
 </head>
 <body>
-$END$
+  <h1>jQuery 기초</h1>
+  <textarea id="content">jQuery를 배워보자</textarea>
+  <script>
+    console.log( $('#content').val() );
+  </script>
+
+  <h1>jQuery 이벤트</h1>
+  <button id="b1">클릭</button>
+  <script>
+    // 익명함수
+    $('#b1').click(function () {
+        console.log("Hello");
+    });
+  </script>
 </body>
 </html>
