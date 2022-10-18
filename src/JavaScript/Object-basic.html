@@ -2,9 +2,38 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>객체(Object)</title>
 </head>
 <body>
+    <h1>객체(Object)</h1>
+    <script>
+        var person = {
+            name: 'changbum',
+            sayHello : function() { console.log('hello'); }
+        }
 
+        console.log(person.name);
+        person.sayHello();
+    </script>
+
+    <h1>Date 객체</h1>
+    <script>
+        // Date 객체 생성
+        var now = new Date();
+
+        document.write(now.getFullYear() + "년");
+        document.write(now.getMonth() + 1 + "월");
+        document.write(now.getDate() + "일");
+        document.write('<br>');
+
+        // 1970년 1월 1일 00:00:00을 기준으로 흐른 시간을 밀리초로 표시
+        document.write(now.getTime());
+        document.write('<br>');
+
+        // 특정 일의 Date 객체 생성
+        var christmas = new Date('2022-12-25');
+        document.write("2022년의 크리스마스 : " + christmas);
+
+    </script>
 </body>
 </html>
