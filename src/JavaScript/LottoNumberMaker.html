@@ -1,10 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>로또 번호 추첨기</title>
 </head>
 <body>
-$END$
+  <h1>로또 번호 추첨기</h1>
+  <script>
+    var lotto = [];
+    while(lotto.length < 6) {
+      var randomNumber = parseInt( Math.random() * 45 + 1 );
+      if(lotto.indexOf(randomNumber) == -1) {
+        lotto.push( randomNumber );
+      }
+    }
+    lotto.sort((a, b) => a - b);
+    document.write(lotto);
+  </script>
+
 </body>
 </html>
