@@ -1,10 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>기념일 계산기</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 </head>
-<body>
-$END$
+<body class="container">
+    <section class='photos'>
+        <img id='duhee' src="/images/duhee.jpeg" alt="duhee">
+        <img id='heart' src="/images/heart.png" alt="heart">
+        <img id='jisook' src="/images/jisook.jpeg" alt="jisook">
+    </section>
+    <div class='container d-flex flex-column justify-content-center align-items-center mt-3'>
+        <h3>두희♥지숙</h3>
+        <h3 id='love'>0일째</h3>
+        <h4 class="date">2022-02-15</h4>
+    </div>
+    <hr/>
+    <section class='special-day'>
+        <h3 class='title'>발렌타인 데이</h3>
+        <div class='date-box'>
+            <p id='valentine' class='days-left'>0일 남음</p>
+            <p class='date'>2023.2.14</p>
+        </div>
+    </section>
+    <hr/>
+    <section class='special-day'>
+        <h3 class='title'>1000일</h3>
+        <div class='date-box'>
+            <p id='thousand' class='days-left'>0일 남음</p>
+            <p id='thousand-date' class='date'>0000.00.00</p>
+        </div>
+    </section>
+    <hr/>
+
+    <script>
+        var now = new Date();
+
+        // 사귀기 시작한 날
+        var start = new Date('2022-02-15');
+
+        var timeDiff = now.getTime() - start.getTime();
+
+        // Math.floor로 소수점 버림
+        var day = Math.floor(timeDiff / (1000 * 60 * 60 * 24) + 1);
+
+        $('#love').text(day + '일째');
+
+        var valentine = new Date('2023-02-14');
+        var timeDiff2 = valentine.getTime() - now.getTime();
+        var day2 = Math.floor(timeDiff2 / (1000 * 60 * 60 * 24) + 1);
+        $('#valentine').text(day2 + '일 남음');
+
+        // 사귄지 1000일 구하기
+        var ms = start.getTime() + 999 * (1000 * 60 * 60 * 24);
+        var thousand = new Date(ms);
+        var thousandDate = thousand.getFullYear() + '.' + (thousand.getMonth() + 1) + '.' + thousand.getDate();
+        $('#thousand-date').text(thousandDate);
+
+        var timeDiff3 = thousand.getTime() - now.getTime();
+        var day3 = Math.floor(timeDiff3 / (1000 * 60 * 60 * 24) + 1);
+        $('#thousand').text(day3 + '일 남음');
+    </script>
 </body>
+
 </html>
+
+<style>
+    * {
+        color: #333333;
+    }
+    p {
+        margin-bottom: 1px;
+    }
+    .photos {
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #duhee {
+        width:150px;
+        height:150px;
+        object-fit:cover;
+        border-radius:50%;
+        margin-right: 30px;
+    }
+    #jisook {
+        width:150px;
+        height:150px;
+        object-fit:cover;
+        border-radius:50%;
+        margin-left: 30px;
+    }
+    #heart {
+        width:50px;
+        height:50px;
+    }
+    .gray {
+        color: #a0a0a0;
+    }
+    .special-day {
+        display: flex;
+        justify-content: space-between;
+    }
+    .title {
+        display: flex;
+        align-items: center;
+    }
+    .days-left {
+        text-align: right;
+    }
+    .date {
+        text-align: right;
+        color: #a0a0a0;
+    }
+</style>
