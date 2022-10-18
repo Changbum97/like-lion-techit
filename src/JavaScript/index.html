@@ -1,10 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>JavaScript 사용 방법</title>
 </head>
 <body>
-$END$
+  <h1>JavaScript 사용 방법 - 1. html 내부</h1>
+  <script>
+    document.write('안녕하세요');
+  </script>
+
+  <h1>JavaScript 사용 방법 - 2. js 파일</h1>
+  <script src="myScript.js"></script>
+
+  <h1>세미콜론과 주석</h1>
+  <script>
+    document.write('문장의 끝에 세미콜론');
+    document.write('생략가능')
+    // 한 줄 주석
+    /*
+    여러줄 주석
+    여러줄
+     */
+  </script>
+
+  <h1>변수 사용</h1>
+  <script>
+    var name = '엄준식';
+    var age = 20;
+    var height = 180.2;
+    var single = true;
+    document.write(name);
+    document.write("<br>");
+    document.write(typeof name);    // string
+    document.write("<br>");
+    document.write(typeof age);     //number
+    document.write("<br>");
+    document.write(typeof height);  // number
+    document.write("<br>");
+    document.write(typeof single);  // boolean
+    document.write("<br>");
+  </script>
+
+  <h1>반복문</h1>
+  <script>
+    for(var i = 0 ; i < 6 ; i ++) {
+      document.write(i);
+    }
+
+    var j = 0;
+    while(j < 6) {
+      document.write(j);
+      j ++;
+    }
+  </script>
+
+  <h1>배열</h1>
+  <script>
+    var arr = [5, 8, 7, 11, 2];
+    document.write(arr[0] + "<br>");   // 0번째 인덱스 출력
+    document.write(arr + "<br>");    // 배열 전체 출력
+    document.write(arr.length + "<br>");  // 배열 길이(4) 출력
+
+    arr.push(4);    // 맨 뒤에 4 추가
+
+    document.write(arr.indexOf(2) + "<br>"); // arr에 2가 있으면 해당 인덱스, 없으면 -1 출력
+
+    // 배열 정렬
+    arr.sort();
+    document.write(arr + "<br>");   // 사전순 정렬이기 때문에 11이 2보다 먼저 나옴
+
+    arr.sort((a, b) => a - b);  // 오름차순 정렬
+    document.write(arr);
+  </script>
+
+  <h1>조건문</h1>
+  <script>
+    if(1 + 2 == 3) {
+      document.write("맞았습니다.");
+    } else {
+      document.write("틀렸습니다.");
+    }
+  </script>
+
+  <h1>랜덤값 생성</h1>
+  <script>
+    var random = Math.random() * 45 + 1;   // 1 ~ 45 (float)
+    var randomNumber = parseInt(random);    // 정수형으로 변환
+    document.write(randomNumber + "<br>");
+    document.write(random);
+  </script>
+
+  <h1>문자열 글자수 세기</h1>
+  <script>
+    var string = '안녕하세요! 반갑습니다~';
+    document.write(string.length);
+  </script>
+
+  <h1>함수 사용</h1>
+  <script>
+    function print1to3() {
+      for(var i = 1 ; i <= 3 ; i ++) {
+        document.write(i+"<br>");
+      }
+      document.write("<br>");
+    }
+
+    print1to3();
+    print1to3();
+  </script>
+
 </body>
 </html>
