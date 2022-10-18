@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>자소서 글자수 계산</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body class="container">
+    <h1>자기소개</h1>
+    <!-- onkeydown => 키가 눌러지면 실행 -->
+    <textarea onkeydown="counter();" class="form-control" rows="3" id="jasoseol">저는 인성 문제가 없습니다.</textarea>
+    <span id="count">(0/200)</span>
+    <script>
+        function counter() {
+            // id로 값 가져오기
+            var content = document.getElementById('jasoseol').value;
+
+            // 200글자 넘으면 자름
+            if(content.length > 200) {
+                content = content.substring(0, 200);
+                document.getElementById('jasoseol').value = content;
+            }
+
+            // id로 접근 후 내부 값 변경
+            document.getElementById('count').innerHTML = '(' + content.length + '/200)';
+        }
+        counter();
+    </script>
+</body>
+</html>
