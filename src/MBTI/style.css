@@ -1,0 +1,40 @@
+article {
+    /* 가로로 꽉 채우기 */
+    display: flex;
+    flex-direction: column;
+}
+
+.question {
+    /* 시작할 때는 없었다가 시작 버튼 누르면 나타나야 됨 */
+    display: none;
+}
+
+.result {
+    display: none;
+}
+
+#img {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto; /* 가운데 정렬 */
+}
+
+.share {
+    margin: 0 auto;
+}
+
+.kakao_ad {
+    width: 320px;
+    margin: 0 auto;
+}
+
+.banner {
+    display: flex;
+    justify-content: center;    /* 안에 있는 태그들 정렬  */
+    width: 300px;
+    margin: 0 auto;
+}
+
+.banner-img {
+    width: 300px;
+}
