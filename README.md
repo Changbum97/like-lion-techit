@@ -20,4 +20,7 @@
 - AddThis로 SNS 공유 기능 추가
 - Kakao Adfit, 직접 광고 붙이기 적용
 - 검색 엔진 최적화 (SEO) 진행
-- 결과 : https://chb2005-mbti.netlify.app/
+- 결과 : https://changbum97-mbti.netlify.app/
+
+## 쉽게 만드는 쿨찐 테스트 - Test
+- 
