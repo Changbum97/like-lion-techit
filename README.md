@@ -23,4 +23,5 @@
 - 결과 : https://changbum97-mbti.netlify.app/
 
 ## 쉽게 만드는 쿨찐 테스트 - Test
-- 
+- HTML, CSS, JS를 활용한 쿨찐 테스트
+- 결과 : https://changbum97-coolzintest.netlify.app/
