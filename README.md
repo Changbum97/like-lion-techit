@@ -29,4 +29,5 @@
 ## 무작정 따라 만드는 Python 온라인 스토어
 - 가상환경(venv) 설치
 - Flask 및 필요한 라이브러리 설치
-- Flask와 MongoDB Atlas 연동
+- Flask, MongoDB Atlas 연동
+- DB 연결 테스트
