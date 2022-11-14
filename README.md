@@ -30,4 +30,5 @@
 - 가상환경(venv) 설치
 - Flask 및 필요한 라이브러리 설치
 - Flask, MongoDB Atlas 연동
-- DB 연결 테스트
+- MongoDB 연결 테스트
+- MongoDB Compass 설치 
