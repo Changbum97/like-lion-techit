@@ -26,9 +26,15 @@
 - HTML, CSS, JS를 활용한 쿨찐 테스트
 - 결과 : https://changbum97-coolzintest.netlify.app/
 
-## 무작정 따라 만드는 Python 온라인 스토어
+## 무작정 따라 만드는 Python 온라인 스토어 - PythonOnlineStore
 - 가상환경(venv) 설치
 - Flask 및 필요한 라이브러리 설치
 - Flask, MongoDB Atlas 연동
 - MongoDB 연결 테스트
 - MongoDB Compass 설치 
+
+## 완벽한 당신을 위한 프로그래밍 바이블 - C++
+- C++ 기초
+- Hello World 출력
+- 객체지향적 계산기
+- 숫자 야구 게임
