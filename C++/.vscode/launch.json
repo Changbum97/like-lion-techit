@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": true,
       "externalConsole": false,
-      "cwd": "/Users/changbum/Documents/DevStudy/멋사 BE/TECHIT/C++/calculator",
-      "program": "/Users/changbum/Documents/DevStudy/멋사 BE/TECHIT/C++/calculator/build/Debug/outDebug",
+      "cwd": "/Users/changbum/Documents/DevStudy/멋사 BE/TECHIT/C++/number_baseball_game/src",
+      "program": "/Users/changbum/Documents/DevStudy/멋사 BE/TECHIT/C++/number_baseball_game/src/build/Debug/outDebug",
       "MIMode": "gdb"
     }
   ]
