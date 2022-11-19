@@ -31,6 +31,8 @@
   "files.associations": {
     "iostream": "cpp",
     "type_traits": "cpp",
-    "string": "cpp"
-  }
+    "string": "cpp",
+    "ostream": "cpp"
+  },
+  "C_Cpp.errorSquiggles": "Disabled"
 }
