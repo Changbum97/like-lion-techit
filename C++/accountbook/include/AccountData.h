@@ -9,7 +9,7 @@ enum class DATA_TYPE {
     INCOME,
     OUTCOME,
     LAST
-}
+};
 
 class AccountData {
 
@@ -44,4 +44,4 @@ private:
     string category;
     int amount;
 
-}
+};

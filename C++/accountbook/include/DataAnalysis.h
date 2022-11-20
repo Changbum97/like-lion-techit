@@ -3,6 +3,7 @@
 #include <string>
 #include <map>
 #include <vector>
+#include "AccountData.h"
 
 using namespace std;
 
@@ -11,7 +12,7 @@ enum class ANALYSIS_MODE {
     NETCOME,
     CATEGORY_COME,
     LAST
-}
+};
 
 enum class ANALYSIS_TYPE {
     NONE,
@@ -20,24 +21,23 @@ enum class ANALYSIS_TYPE {
     MONTHLY,
     DAILY,
     LAST
-}
+};
 
 class DataAnalysis {
 public:
     DataAnalysis() {
-        analysisDataIncome.reverse(ANALYSIS_TYPE::LAST);
-        analysisDataOutcome.reverse(ANALYSIS_TYPE::LAST);
-        analysisDataOutcomeByCategory.reverse(ANALYSIS_TYPE::LAST);
     }
     void selectTarget(string date, string date_end = "");
-    void analyze(ANALYSIS_TYPE type, ANALYSIS_MODE mode);
-    void makeAnalysisData(ANALYSIS_TYPE type, ANALYSIS_MODE mode,
-                          map<string, vector<AccountData>> data);
+    void analyze(ANALYSIS_MODE mode);
+    void makeAnalysisData(ANALYSIS_MODE mode, map<string, vector<AccountData> > data);
+    virtual bool isTargetData(string date);
 
 public:
+    int wasteRate = 60;
     string date;
     string date_end;
-    vector<map<string, int>> analysisDataIncome;
-    vector<map<string, int>> analysisDataOutcome;
-    vectro<map<string, map<string, int>>> analysisDataOutcomeByCategory;
-}
+    string dateKey;
+    map<string, int> analysisDataIncome;
+    map<string, int> analysisDataOutcome;
+    map<string, map<string, int> > analysisDataOutcomeByCategory;
+};

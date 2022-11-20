@@ -1,4 +1,5 @@
 #include "../include/DataManager.h"
+#include <iostream>
 #include <fstream>
 #include <sstream>
 #include <vector>
@@ -21,7 +22,7 @@ void DataManager::save() {
                 line = "";
                 line += data.getDate();
                 line += "," + to_string((int)data.getType());
-                if(data.type == DATA_TYPE::OUTCOME) {
+                if(data.getType() == DATA_TYPE::OUTCOME) {
                     line += "," + data.getName();
                     line += "," + data.getCategory();
                 }
@@ -50,11 +51,11 @@ void DataManager::load() {
                 strVector.push_back(token);
 
             }
-            stringstream type(vector[1]);
+            stringstream type(strVector[1]);
             int itype;
             type >> itype;
 
-            if(itype == DATA_TYPE::INCOME) {
+            if(itype == 1/*DATA_TYPE::INCOME*/) {
                 stringstream amount(strVector[2]);
                 int iamount;
                 amount >> iamount;
@@ -66,7 +67,7 @@ void DataManager::load() {
 
                 accountData[strVector[0]].push_back(data);
 
-            } else if(itype == DATA_TYPE::OUTCOME) {
+            } else if(itype == 2/*DATA_TYPE::OUTCOME*/) {
                 stringstream amount(strVector[2]);
                 int iamount;
                 amount >> iamount;

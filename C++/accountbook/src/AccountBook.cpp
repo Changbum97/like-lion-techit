@@ -2,6 +2,7 @@
 #include "../include/DataAnalysis.h"
 #include <iostream>
 #include <string>
+#include <cmath>
 
 using namespace std;
 
@@ -67,8 +68,8 @@ INPUT_MENU AccountBook::printAndGetInputMenu() {
 }
 void AccountBook::runInput(INPUT_MENU inputMenu) {
     switch(inputMenu){
-        case INPUT_MENU::INCOME:
-            string date;
+        case 1:  //INPUT_MENU::INCOME:
+            {string date;
             int amount;
 
             cout << "Date(YYMMDD) : ";
@@ -80,11 +81,11 @@ void AccountBook::runInput(INPUT_MENU inputMenu) {
                 date,
                 DATA_TYPE::INCOME,
                 amount);
-            dataManager.appendData(data);
+            dataManager.appendData(data);}
             break;
 
-        case INPUT_MENU::OUTCOME:
-            string date, name, category;
+        case 2:  //INPUT_MENU::OUTCOME:
+            {string date, name, category;
             int amount;
 
             cout << "Date(YYMMDD) : ";
@@ -102,7 +103,7 @@ void AccountBook::runInput(INPUT_MENU inputMenu) {
                 amount,
                 name,
                 category);
-            dataManager.appendData(data);
+            dataManager.appendData(data);}
             break;
 
         default:
@@ -110,6 +111,7 @@ void AccountBook::runInput(INPUT_MENU inputMenu) {
     }
 }
 void AccountBook::runSPA() {
+    int type;
     cout << "1. Period Analysis" << endl;
     cout << "2. Yearly Analysis" << endl;
     cout << "3. Monthly Analysis" << endl;
@@ -118,28 +120,33 @@ void AccountBook::runSPA() {
     
     string date, date_end = "";
     switch((ANALYSIS_TYPE)type) {
-        case ANALYSIS_TYPE::PERIOD:
-            cout << "Type start date(YYYYMMDD) : ";
+        
+        case 1:  //ANALYSIS_TYPE::PERIOD:
+            {cout << "Type start date(YYYYMMDD) : ";
             cin >> date;
             cout << "Type end date(YYYYMMDD) : ";
             cin >> date_end;
+            dataAnalysis = (PeriodAnalysis *)&periodAnalysis;}
             break;
-        case ANALYSIS_TYPE::YEARLY:
-            cout << "Type year(YYYY) : ";
+        case 2:  //ANALYSIS_TYPE::YEARLY:
+            {cout << "Type year(YYYY) : ";
             cin >> date;
+            dataAnalysis = (YearlyAnalysis *)&yearlyAnalysis;}
             break;
-        case ANALYSIS_TYPE::MONTHLY:
-            cout << "Type month with year(YYYYMM) : ";
+        case 3:  //ANALYSIS_TYPE::MONTHLY:
+            {cout << "Type month with year(YYYYMM) : ";
             cin >> date;
+            dataAnalysis = (MonthlyAnalysis *)&monthlyAnalysis;}
             break;
-        case ANALYSIS_TYPE::DAILY:
-            cout << "Type date(YYYYMMDD) : ";
+        case 4:  //ANALYSIS_TYPE::DAILY:
+            {cout << "Type date(YYYYMMDD) : ";
             cin >> date;
+            dataAnalysis = (DailyAnalysis *)&dailyAnalysis;}
             break;
         default:
             break;
     }
-    dataAnalysis.selectTarget(date, date_end);
+    dataAnalysis->selectTarget(date, date_end);
 
     int mode;
     cout << "Select analysis mode" << endl;
@@ -147,12 +154,11 @@ void AccountBook::runSPA() {
     cout << "2. Outcome by category" << endl;
     cin >> mode;
 
-    dataAnalysis.makeAnalysisData(
-        (ANALYSIS_TYPE)type, 
+    dataAnalysis->makeAnalysisData(
         (ANALYSIS_MODE)mode,
         dataManager.get());
 
-    dataAnalysis.analyze((ANALYSIS_TYPE)type, (ANALYSIS_MODE)mode);
+    dataAnalysis->analyze((ANALYSIS_MODE)mode);
 }
 void AccountBook::setProgramTerminate() {
     isTerminate = true;

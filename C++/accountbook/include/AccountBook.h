@@ -1,6 +1,11 @@
 #pragma once
 
 #include "DataManager.h"
+#include "DataAnalysis.h"
+#include "PeriodAnalysis.h"
+#include "YearlyAnalysis.h"
+#include "MonthlyAnalysis.h"
+#include "DailyAnalysis.h"
 
 enum class MENU {
     NONE,   // 0부터 시작
@@ -8,14 +13,14 @@ enum class MENU {
     SPA,
     TERMINATE,
     LAST
-}
+};
 
 enum class INPUT_MENU {
     NONE,
     INCOME,
     OUTCOME,
     LAST
-}
+};
 
 class AccountBook {
 
@@ -32,5 +37,9 @@ public:
 private:
     bool isTerminate;
     DataManager dataManager;
-    DataAnalysis dataAnalysis;
+    DataAnalysis* dataAnalysis;
+    PeriodAnalysis periodAnalysis;
+    YearlyAnalysis yearlyAnalysis;
+    MonthlyAnalysis monthlyAnalysis;
+    DailyAnalysis dailyAnalysis;
 };

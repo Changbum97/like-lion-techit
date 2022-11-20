@@ -8,9 +8,48 @@
       "args": [],
       "stopAtEntry": true,
       "externalConsole": false,
-      "cwd": "/Users/changbum/Documents/DevStudy/멋사 BE/TECHIT/C++/number_baseball_game/src",
-      "program": "/Users/changbum/Documents/DevStudy/멋사 BE/TECHIT/C++/number_baseball_game/src/build/Debug/outDebug",
+      "cwd": "/Users/changbum/Documents/DevStudy/멋사 BE/TECHIT/C++/accountbook/src",
+      "program": "/Users/changbum/Documents/DevStudy/멋사 BE/TECHIT/C++/accountbook/src/build/Debug/outDebug",
       "MIMode": "gdb"
+    },
+    {
+      "name": "C/C++: cpp 활성 파일 빌드 및 디버그",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${fileDirname}/${fileBasenameNoExtension}",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${fileDirname}",
+      "environment": [],
+      "externalConsole": true,
+      "MIMode": "lldb",
+      "preLaunchTask": "C/C++: cpp 활성 파일 빌드"
+    },
+    {
+      "name": "C/C++: g++ 활성 파일 빌드 및 디버그",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${fileDirname}/${fileBasenameNoExtension}",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${fileDirname}",
+      "environment": [],
+      "externalConsole": true,
+      "MIMode": "lldb",
+      "preLaunchTask": "C/C++: g++ 활성 파일 빌드"
+    },
+    {
+      "name": "C/C++: clang++ 활성 파일 빌드 및 디버그",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${fileDirname}/${fileBasenameNoExtension}",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${fileDirname}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "lldb",
+      "preLaunchTask": "C/C++: clang++ 활성 파일 빌드"
     }
   ]
 }

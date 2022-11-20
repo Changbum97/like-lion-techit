@@ -16,11 +16,11 @@ public:
     void appendData(AccountData data) {
         accountData[data.getDate()].push_back(data);
     }
-    map<string, vector<AccountData>> get() {
+    map<string, vector<AccountData> > get() {
         return accountData;
     }
 
 private:
-    map<string, vector<AccountData>> accountData;
+    map<string, vector<AccountData> > accountData;
     string filename = "AccountBook.data";
-}
+};

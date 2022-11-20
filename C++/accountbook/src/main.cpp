@@ -8,15 +8,15 @@ int main() {
         MENU menu = accountBook.printAndGetMenu();
 
         switch(menu) {
-        case (MENU::INPUT):
-            INPUT_MENU input_menu = accountBook.printAndGetInputMenu();
-            accountBook.runInput(input_menu);
+        case 1: //(MENU::INPUT):
+            {INPUT_MENU input_menu = accountBook.printAndGetInputMenu();
+            accountBook.runInput(input_menu);}
             break;
-        case (MENU::SPA):
-            accountBook.runSPA();
+        case 2: //(MENU::SPA):
+            {accountBook.runSPA();}
             break;
-        case (MENU::TERMINATE):
-            accountBook.setProgramTerminate();
+        case 3: //(MENU::TERMINATE):
+            {accountBook.setProgramTerminate();}
             break;
         default:
             break;
