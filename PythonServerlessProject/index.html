@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  		  <title>Nature - Free CSS Template</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/fontAwesome.css">
+        <link rel="stylesheet" href="css/light-box.css">
+        <link rel="stylesheet" href="css/templatemo-style.css">
+        <link href="https://fonts.googleapis.com/css?family=Kanit:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    </head>
+
+    <body>
+        <nav>
+            <div class="logo">
+                <a href="index.html"><em>Nature</em></a>
+            </div>
+            <span></span>
+          </div>
+        </nav>
+
+        <div id="video-container">
+            <div class="video-overlay"></div>
+            <div class="video-content">
+                <div class="inner">
+                  <h1>Highway to <em>Nature</em></h1>
+                  <p>FREE CSS TEMPLATE by templatemo</p>
+                  <p>Homepage with full-width image gallery</p>
+                    <div class="scroll-icon">
+                        <a class="scrollTo" data-scrollTo="portfolio" href="#"><img src="img/scroll-icon.png" alt=""></a>
+                    </div>    
+                </div>
+            </div>
+            <video autoplay="" loop="" muted>
+                <source src="highway-loop.mp4" type="video/mp4" />
+            </video>
+        </div>
+
+        <div class="full-screen-portfolio" id="portfolio">
+            <div class="container-fluid" id="gallery">
+            </div>
+        </div>
+
+        <footer>
+            <div class="container-fluid">
+                <div class="col-md-12">
+                    <p>Copyright &copy; 2022 LIKE LION | Designed by TemplateMo</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Modal button -->
+        <div class="popup-icon">
+            <button id="modBtn" class="modal-btn"><img src="img/contact-icon.jpg" alt=""></button>
+        </div>  
+
+        <!-- Modal -->
+        <div id="modal" class="modal">
+            <!-- Modal Content -->
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h3 class="header-title">Add <em>a New Picture</em></h3>
+                    <div class="close-btn"><img src="img/close_contact.png" alt=""></div>    
+                </div>
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <div class="col-md-6 col-md-offset-3">
+                        <form id="contact" action="#" onsubmit="create(); return false;">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <fieldset>
+                                        <input name="subject" type="text" class="form-control" id="create-subject" placeholder="Subject..." required="">
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-12">
+                                    <fieldset>
+                                        <input name="image_url" type="text" class="form-control" id="create-image_url" placeholder="Image URL..." required="">
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-12">
+                                    <fieldset>
+                                        <button type="submit" id="create-submit" class="btn">Submit</button>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div id="update-modal" class="modal">
+            <!-- Modal Content -->
+            <div id="update-modal-content" class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h3 class="header-title">Update <em>the Picture</em></h3>
+                    <div class="close-btn"><img src="img/close_contact.png" alt=""></div>    
+                </div>
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <div class="col-md-6 col-md-offset-3">
+                        <form id="contact" action="#" onsubmit="update(); return false;">
+                            <input type="hidden" name="update-id" id="update-id"/>
+                            <div class="row">
+                                <div class="col-md-12">
+                                   <fieldset>
+                                       <input name="subject" type="text" class="form-control" id="update-subject" placeholder="Subject..." required="">
+                                   </fieldset>
+                                 </div>
+                                 <div class="col-md-12">
+                                   <fieldset>
+                                        <input name="image_url" type="text" class="form-control" id="update-image_url" placeholder="Image URL..." required="">
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-12">
+                                    <fieldset>
+                                        <button type="submit" id="update-submit" class="btn">Submit</button>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        <script>
+            var gal = document.getElementById('gallery');
+            fetch("https://yi2td282i0.execute-api.ap-northeast-2.amazonaws.com/v1").then(function(response) {
+                response.json().then(function(json) {
+                    for(var i=0; i<json.length; i++) {
+                        gal.innerHTML += "\
+                            <div class=\"col-md-4 col-sm-6\"> \
+                                <div class=\"portfolio-item\"> \
+                                    <a href=\""+json[i].image_url+"\" data-lightbox=\"image-1\"> \
+                                        <div class=\"thumb\"> \
+                                            <div class=\"hover-effect\"> \
+                                                <div class=\"hover-content\"> \
+                                                    <h1>"+json[i].subject+"</h1> \
+                                                    <p><span onclick=\"javascript:show_update_modal(\
+                                                        "+json[i].id+",\'"+json[i].subject+"\',\'"+json[i].image_url+"\');\">Update</span> \ | <span onclick=\"javascript:remove("+json[i].id+");\">Delete</span></p> \
+                                                </div> \
+                                            </div> \
+                                            <div class=\"image\"> \
+                                                <img src=\""+json[i].image_url+"\"> \
+                                            </div> \
+                                        </div> \
+                                    </a> \
+                                </div> \
+                            </div>";
+                    }
+                });
+            });
+
+            function create() {
+                subject = document.getElementById("create-subject").value;
+                image_url = document.getElementById("create-image_url").value;
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "https://yi2td282i0.execute-api.ap-northeast-2.amazonaws.com/v1", true);
+                xhr.setRequestHeader('Content-Type', 'application/json');
+                xhr.send(JSON.stringify({
+                    subject: subject,
+                    image_url: image_url
+                }));
+                alert("사진이 추가되었습니다.");
+                location.reload();
+            }
+
+            function show_update_modal(id, subject, image_url) {
+                event.stopPropagation();
+                event.preventDefault();
+
+                document.getElementById("update-id").value = id;
+                document.getElementById("update-subject").value = subject;
+                document.getElementById("update-image_url").value = image_url;
+
+                var modal = document.getElementById("update-modal");
+                var modContent = document.getElementById("update-modal-content");
+                modal.style.display = "block";
+                modContent.classList.remove('modal-animated-out');
+                modContent.classList.add('modal-animated-in');
+            }
+
+            function update() {
+                let isExecuted = confirm("이 사진을 수정하시겠습니까?");
+                if (isExecuted) {
+                    id = parseInt(document.getElementById("update-id").value);
+                    subject = document.getElementById("update-subject").value;
+                    image_url = document.getElementById("update-image_url").value;
+                    var xhr = new XMLHttpRequest();
+                    xhr.open("PUT", "https://yi2td282i0.execute-api.ap-northeast-2.amazonaws.com/v1", true);
+                    xhr.setRequestHeader('Content-Type', 'application/json');
+                    xhr.send(JSON.stringify({
+                        id: id,
+                        subject: subject,
+                        image_url: image_url
+                    }));
+                    alert("사진 정보가 수정되었습니다.");
+                }
+                
+                location.reload();
+            }
+
+            function remove(id) {
+                let isExecuted = confirm("이 사진을 지우시겠습니까?");
+                if (isExecuted) {
+                    var xhr = new XMLHttpRequest();
+                    xhr.open("DELETE", "https://yi2td282i0.execute-api.ap-northeast-2.amazonaws.com/v1", true);
+                    xhr.setRequestHeader('Content-Type', 'application/json');
+                    xhr.send(JSON.stringify({
+                        id: id,
+                    }));
+                    alert("사진이 삭제되었습니다.");
+                }
+                
+                location.reload();
+            }
+        </script>
+        
+    </body>
+</html>
