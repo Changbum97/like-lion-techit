@@ -22,7 +22,7 @@ void DataManager::save() {
                 line = "";
                 line += data.getDate();
                 line += "," + to_string((int)data.getType());
-                if(data.getType() == DATA_TYPE::OUTCOME) {
+                if((int)data.getType() == 2/*DATA_TYPE::OUTCOME*/) {
                     line += "," + data.getName();
                     line += "," + data.getCategory();
                 }
@@ -68,7 +68,7 @@ void DataManager::load() {
                 accountData[strVector[0]].push_back(data);
 
             } else if(itype == 2/*DATA_TYPE::OUTCOME*/) {
-                stringstream amount(strVector[2]);
+                stringstream amount(strVector[4]);
                 int iamount;
                 amount >> iamount;
 

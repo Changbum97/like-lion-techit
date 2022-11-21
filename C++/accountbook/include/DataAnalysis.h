@@ -30,7 +30,7 @@ public:
     void selectTarget(string date, string date_end = "");
     void analyze(ANALYSIS_MODE mode);
     void makeAnalysisData(ANALYSIS_MODE mode, map<string, vector<AccountData> > data);
-    virtual bool isTargetData(string date);
+    virtual bool isTargetData(string date) = 0;
 
 public:
     int wasteRate = 60;

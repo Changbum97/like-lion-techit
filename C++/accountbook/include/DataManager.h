@@ -22,5 +22,5 @@ public:
 
 private:
     map<string, vector<AccountData> > accountData;
-    string filename = "AccountBook.data";
+    string filename = "AccountBook.Data";
 };

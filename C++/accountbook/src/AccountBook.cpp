@@ -50,7 +50,7 @@ INPUT_MENU AccountBook::printAndGetInputMenu() {
     while(true) {
         cout << endl;
         cout << "----------- Please Select Input Menu -----------" << endl;
-        cout << "1. Incom" << endl;
+        cout << "1. Income" << endl;
         cout << "2. Outcome" << endl;
         cout << "3. Terminate" << endl;
 
@@ -72,7 +72,7 @@ void AccountBook::runInput(INPUT_MENU inputMenu) {
             {string date;
             int amount;
 
-            cout << "Date(YYMMDD) : ";
+            cout << "Date(YYYYMMDD) : ";
             cin >> date;
             cout << "Income Amount : ";
             cin >> amount;
@@ -88,13 +88,13 @@ void AccountBook::runInput(INPUT_MENU inputMenu) {
             {string date, name, category;
             int amount;
 
-            cout << "Date(YYMMDD) : ";
+            cout << "Date(YYYYMMDD) : ";
             cin >> date;
             cout << "Item Name : ";
             cin >> name;
             cout << "Item Category : ";
             cin >> category;
-            cout << "Income Amount : ";
+            cout << "Outcome Amount : ";
             cin >> amount;
 
             AccountData data(
@@ -112,6 +112,7 @@ void AccountBook::runInput(INPUT_MENU inputMenu) {
 }
 void AccountBook::runSPA() {
     int type;
+    cout << "----------- Please select analysis type -----------" << endl;
     cout << "1. Period Analysis" << endl;
     cout << "2. Yearly Analysis" << endl;
     cout << "3. Monthly Analysis" << endl;
@@ -149,7 +150,7 @@ void AccountBook::runSPA() {
     dataAnalysis->selectTarget(date, date_end);
 
     int mode;
-    cout << "Select analysis mode" << endl;
+    cout << "----------- Please select analysis mode -----------" << endl;
     cout << "1. Total income/outcome" << endl;
     cout << "2. Outcome by category" << endl;
     cin >> mode;

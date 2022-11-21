@@ -20,7 +20,7 @@ void DataAnalysis::analyze(ANALYSIS_MODE mode) {
                 특정 % 이상 => You have spent a lot
                 특정 % 미만 => You are saving well
                 */
-                int spend_rate = (100 * analysisDataIncome[dateKey]) / analysisDataOutcome[dateKey];
+                int spend_rate = (100 * analysisDataOutcome[dateKey]) / analysisDataIncome[dateKey];
 
                 cout << "Total Income : ";
                 cout << analysisDataIncome[dateKey] << endl;
@@ -35,7 +35,7 @@ void DataAnalysis::analyze(ANALYSIS_MODE mode) {
                 }
             }
             break;
-        case 2:  //ANALYSIS_MODE::CATEGORY_COME:
+        case 2: //ANALYSIS_MODE::CATEGORY_COME:
             {
                 /*
                 Category
