@@ -32,6 +32,9 @@
 - Flask, MongoDB Atlas 연동
 - MongoDB 연결 테스트
 - MongoDB Compass 설치 
+- Flask, Python, HTML, Bootstrap을 이용해 Online Store 만들기
+- 상품 CRUD(이미지 업로드 포함) 기능 구현
+- 유저 회원가입, 로그인, 로그아웃 기능 구현
 
 ## 완벽한 당신을 위한 프로그래밍 바이블 - C++
 - C++ 기초
@@ -40,6 +43,7 @@
 - 숫자 야구 게임
 - 가계부
 
-## 서버리스로 힙하게 웹 개발 시작하기 - Python, AWS
+## 서버리스로 힙하게 웹 개발 시작하기 - PythonServerlessProject
 - python으로 REST API 개발
-- API Gateway, lambda, Dynamo DB, S3, Cloud Front를 사용해 웹 사이트 배포
+- API Gateway, lambda, Dynamo DB을 사용해 웹 사이트 제작
+- S3, Cloud Front를 사용해 웹 사이트 배포
