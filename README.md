@@ -39,3 +39,7 @@
 - 객체지향적 계산기
 - 숫자 야구 게임
 - 가계부
+
+## 서버리스로 힙하게 웹 개발 시작하기 - Python, AWS
+- python으로 REST API 개발
+- API Gateway, lambda, Dynamo DB, S3, Cloud Front를 사용해 웹 사이트 배포
